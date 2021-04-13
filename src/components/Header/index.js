@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReactLink} from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -16,13 +17,22 @@ const Items = styled.li`
   margin: 15px;
 `;
 
+const Link = styled(ReactLink)`
+    color: #FFFCF2;
+    text-decoration: none;
+
+    :hover {
+        color: #EDF2F4;
+    }
+`;
+
 const Header = () => {
   return (
     <Navigator>
-      <Items>Home</Items>
-      <Items>About Me</Items>
-      <Items>Projects</Items>
-      <Items>Experience</Items>
+      <Items><Link to='/'>Home</Link></Items>
+      <Items><Link to='/aboutme'>About Me</Link></Items>
+      <Items><Link to='/projects'>Projects</Link></Items>
+      <Items><Link to='/experience'>Experience</Link></Items>
     </Navigator>
   );
 };
