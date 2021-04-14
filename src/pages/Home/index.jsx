@@ -10,13 +10,13 @@ import { github_url, linkedin_url, scholar_url } from "../../UI/variables";
 const Name = styled.h1`
   font-size: 3.5em;
   font-weight: 400;
-  color: #252422;
+  color: ${({ theme }) => theme.text};
   white-space: pre-line;
 `;
 
 const JobTitle = styled.h2`
   font-weight: 200;
-  color: #252422;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Presentation = styled.div`
@@ -40,9 +40,9 @@ const AboutBtn = styled.button`
   margin: 25px auto 0px auto;
   display: block;
   border-radius: 15px;
-  background-color: #252422;
+  background-color: ${({ theme }) => theme.text};
   border: none;
-  color: #fffcf2;
+  color: ${({ theme }) => theme.content};
   font-size: 16px;
   padding: 8px 20px;
   cursor: pointer;
