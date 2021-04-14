@@ -36,23 +36,6 @@ const ProfilePicture = styled.img`
   height: 260px;
 `;
 
-const AboutBtn = styled.button`
-  margin: 25px auto 0px auto;
-  display: block;
-  border-radius: 15px;
-  background-color: ${({ theme }) => theme.text};
-  border: none;
-  color: ${({ theme }) => theme.content};
-  font-size: 16px;
-  padding: 8px 20px;
-  cursor: pointer;
-
-  @media (max-width: 800px) {
-    width: 85%;
-    margin: 15px;
-  }
-`;
-
 const SocialMedias = styled.div`
   display: flex;
   flex-direction: row;
@@ -76,7 +59,6 @@ const Home = () => {
           <ProfilePicture src={profile} alt="Profile Picture" />
         </div>
       </Presentation>
-      <AboutBtn>About Me</AboutBtn>
       <SocialMedias>
         <a href={github_url}>
           <Icon src={github} />
