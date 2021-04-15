@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import GlobalStyle from "./GlobalStyle";
 import Home from "./pages/Home";
 import { darkTheme, lightTheme } from "./UI/themes";
+import AboutMe from "./pages/AboutMe";
 
 function App() {
 
@@ -22,6 +23,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/aboutme">
+          <AboutMe />
         </Route>
       </Switch>
     </Router>

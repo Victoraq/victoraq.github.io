@@ -7,3 +7,6 @@ export const Content = styled.div`
     background-color: ${({ theme }) => theme.content};
     padding: 25px;
 `
+export const Paragraph = styled.p`
+  color: ${({ theme }) => theme.text};
+`;
