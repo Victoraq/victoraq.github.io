@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Card from "../../components/Card";
+import learning from "../../assets/images/learning.svg";
+import chart from "../../assets/images/chart.svg";
+import python from "../../assets/images/python.svg";
 import { Content, Paragraph } from "../../UI";
 
 const AboutMeContent = styled(Content)`
@@ -9,6 +13,7 @@ const AboutMeContent = styled(Content)`
 const Name = styled.h1`
   font-size: 3.5em;
   font-weight: 400;
+  margin: 5px;
   color: ${({ theme }) => theme.text};
 `;
 
@@ -37,6 +42,22 @@ const Interest = styled(JobTitle)`
     border-bottom: 1px solid ${({ theme }) => theme.text};
     margin: auto 5px;
   }
+`;
+
+const CardBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
+const Icon = styled.img`
+  width: 35px;
+  margin: 5%;
+  filter: ${({ theme }) => theme.filter};
 `;
 
 const AboutMe = () => {
@@ -75,21 +96,38 @@ const AboutMe = () => {
         eros.
       </Paragraph>
       <Interest>Areas of Interest</Interest>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ultrices
-        dui. Pellentesque porttitor blandit nunc, ac hendrerit dui condimentum
-        sed. Duis elementum eros nisl, vel dictum ipsum pharetra non. Morbi nec
-        nulla ligula. Aenean sit amet feugiat tellus. Pellentesque habitant
-        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        Aliquam rhoncus enim dolor, in porttitor libero fringilla ac. Mauris
-        dapibus, quam non pellentesque vulputate, ligula augue pellentesque dui,
-        eu aliquam erat ipsum eget felis. Vestibulum pretium est orci, vitae
-        placerat erat laoreet sit amet. Nullam suscipit tellus ut mi finibus,
-        quis vestibulum velit consequat. Nulla non arcu id tortor porttitor
-        rutrum vitae mollis tortor. Cras dignissim ullamcorper condimentum.
-        Nulla facilisi. Mauris turpis nunc, dapibus at tincidunt at, luctus nec
-        eros.
-      </Paragraph>
+      <CardBox>
+        <Card>
+          <Icon src={learning} />
+          <header>Machine Learning</header>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
+            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
+            non. Morbi nec nulla ligula.
+          </Paragraph>
+        </Card>
+        <Card>
+          <Icon src={chart} />
+          <header>Data Analysis</header>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
+            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
+            non. Morbi nec nulla ligula.
+          </Paragraph>
+        </Card>
+        <Card>
+          <Icon src={python} />
+          <header>Backend Development</header>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
+            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
+            non. Morbi nec nulla ligula.
+          </Paragraph>
+        </Card>
+      </CardBox>
     </AboutMeContent>
   );
 };
