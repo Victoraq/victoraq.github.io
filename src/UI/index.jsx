@@ -6,7 +6,14 @@ export const Content = styled.div`
     height: 60vh;
     background-color: ${({ theme }) => theme.content};
     padding: 25px;
+    transition: 0.3s;
+
+    @media (max-width: 800px) {
+      margin: 0 5%;
+      height: 100vh;
+    }
 `
 export const Paragraph = styled.p`
   color: ${({ theme }) => theme.text};
+  text-align: left;
 `;
