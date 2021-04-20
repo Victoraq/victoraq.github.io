@@ -7,6 +7,7 @@ import GlobalStyle from "./GlobalStyle";
 import Home from "./pages/Home";
 import { darkTheme, lightTheme } from "./UI/themes";
 import AboutMe from "./pages/AboutMe";
+import Projects from "./pages/Projects";
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route exact path="/aboutme">
           <AboutMe />
+        </Route>
+        <Route exact path="/projects">
+          <Projects />
         </Route>
       </Switch>
     </Router>
