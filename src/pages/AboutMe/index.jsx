@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../../components/Card";
+import {Card, CardParagraph, CardBox, CardHeader } from "../../components/Card";
 import learning from "../../assets/images/learning.svg";
 import chart from "../../assets/images/chart.svg";
 import python from "../../assets/images/python.svg";
-import { Content, Paragraph } from "../../UI";
+import { Content } from "../../UI";
 
 const AboutMeContent = styled(Content)`
   height: auto;
@@ -44,16 +44,6 @@ const Interest = styled(JobTitle)`
   }
 `;
 
-const CardBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-`;
-
 const Icon = styled.img`
   width: 35px;
   margin: 5%;
@@ -65,7 +55,7 @@ const AboutMe = () => {
     <AboutMeContent>
       <Name>Victor Aquiles Alencar</Name>
       <JobTitle>Data scientist | Backend developer</JobTitle>
-      <Paragraph>
+      <CardParagraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ultrices
         dui. Pellentesque porttitor blandit nunc, ac hendrerit dui condimentum
         sed. Duis elementum eros nisl, vel dictum ipsum pharetra non. Morbi nec
@@ -79,8 +69,8 @@ const AboutMe = () => {
         rutrum vitae mollis tortor. Cras dignissim ullamcorper condimentum.
         Nulla facilisi. Mauris turpis nunc, dapibus at tincidunt at, luctus nec
         eros.
-      </Paragraph>
-      <Paragraph>
+      </CardParagraph>
+      <CardParagraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ultrices
         dui. Pellentesque porttitor blandit nunc, ac hendrerit dui condimentum
         sed. Duis elementum eros nisl, vel dictum ipsum pharetra non. Morbi nec
@@ -94,38 +84,38 @@ const AboutMe = () => {
         rutrum vitae mollis tortor. Cras dignissim ullamcorper condimentum.
         Nulla facilisi. Mauris turpis nunc, dapibus at tincidunt at, luctus nec
         eros.
-      </Paragraph>
+      </CardParagraph>
       <Interest>Areas of Interest</Interest>
       <CardBox>
         <Card>
           <Icon src={learning} />
-          <header>Machine Learning</header>
-          <Paragraph>
+          <CardHeader>Machine Learning</CardHeader>
+          <CardParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
             ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
             condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
             non. Morbi nec nulla ligula.
-          </Paragraph>
+          </CardParagraph>
         </Card>
         <Card>
           <Icon src={chart} />
-          <header>Data Analysis</header>
-          <Paragraph>
+          <CardHeader>Data Analysis</CardHeader>
+          <CardParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
             ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
             condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
             non. Morbi nec nulla ligula.
-          </Paragraph>
+          </CardParagraph>
         </Card>
         <Card>
           <Icon src={python} />
-          <header>Backend Development</header>
-          <Paragraph>
+          <CardHeader>Backend Development</CardHeader>
+          <CardParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
             ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
             condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
             non. Morbi nec nulla ligula.
-          </Paragraph>
+          </CardParagraph>
         </Card>
       </CardBox>
     </AboutMeContent>
