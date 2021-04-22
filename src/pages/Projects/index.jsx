@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, CardBox, CardHeader, CardParagraph } from "../../components/Card";
+import {
+  Card,
+  CardBox,
+  CardHeader,
+  CardParagraph,
+} from "../../components/Card";
 import car from "../../assets/images/car.jpg";
 import { Content } from "../../UI";
 
@@ -22,64 +27,25 @@ const Image = styled.img`
   border-radius: 5% 5% 0 0;
 `;
 
-const Projects = () => {
+const mapCards = (projectArray) => {
+  return projectArray.map((project) => {
+    return (
+      <Card key={project.id}>
+        <Image src={car} />
+        <CardHeader>{project.title}</CardHeader>
+        <CardParagraph>{project.content}</CardParagraph>
+      </Card>
+    );
+  });
+};
+
+const Projects = ({ projects }) => {
   return (
     <ProjectsContent>
       <Title>Projects</Title>
-      <CardBox>
-        <Card>
-          <Image src={car} />
-          <CardHeader>Backend Development</CardHeader>
-          <CardParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
-            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
-            non. Morbi nec nulla ligula.
-          </CardParagraph>
-        </Card>
-        <Card>
-          <Image src={car} />
-          <CardHeader>Backend Development</CardHeader>
-          <CardParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
-            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
-            non. Morbi nec nulla ligula.
-          </CardParagraph>
-        </Card>
-        <Card>
-          <Image src={car} />
-          <CardHeader>Backend Development</CardHeader>
-          <CardParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
-            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
-            non. Morbi nec nulla ligula.
-          </CardParagraph>
-        </Card>
-      </CardBox>
-      <CardBox>
-        <Card>
-          <Image src={car} />
-          <CardHeader>Backend Development</CardHeader>
-          <CardParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
-            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
-            non. Morbi nec nulla ligula.
-          </CardParagraph>
-        </Card>
-        <Card>
-          <Image src={car} />
-          <CardHeader>Backend Development</CardHeader>
-          <CardParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            ultrices dui. Pellentesque porttitor blandit nunc, ac hendrerit dui
-            condimentum sed. Duis elementum eros nisl, vel dictum ipsum pharetra
-            non. Morbi nec nulla ligula.
-          </CardParagraph>
-        </Card>
-      </CardBox>
+      {projects.map((projectArray) => {
+        return <CardBox>{mapCards(projectArray)}</CardBox>;
+      })}
     </ProjectsContent>
   );
 };

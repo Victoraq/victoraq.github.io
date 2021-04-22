@@ -6,7 +6,7 @@ export const Card = styled.div`
   transition: 0.3s;
   border-radius: 5%;
   padding: 5px 5px;
-  margin: 5px 10px;
+  margin: 10px;
   width: 30%;
   color: ${({ theme }) => theme.text};
   text-align: center;
