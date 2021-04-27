@@ -10,6 +10,7 @@ import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import { projects as data_projects } from "./db";
 import { reshapeArray } from "./utils";
+import Experience from "./pages/Experience";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route exact path="/projects">
             <Projects projects={projects} />
+          </Route>
+          <Route exact path="/experience">
+            <Experience />
           </Route>
         </Switch>
       </Router>
