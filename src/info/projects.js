@@ -1,4 +1,4 @@
-export const projects = {
+export const projects_data = {
   updates: [
     {
       id: 0,
