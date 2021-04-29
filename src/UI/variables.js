@@ -7,12 +7,14 @@ export const scholar_url =
 
 // Theme Colors
 
-export const white = "#EDF2F4";
+export const white = "#fff";
 export const black = "#252422";
 
 export const lightBackground = "#FFFCF2";
-export const lightContent = "#EDF2F4";
+export const lightContent = "#fff";
 export const lightThemeText = "#252422";
+export const lightThemeSecondaryText = "#0000008a";
 export const darkBackground = "#000814";
 export const darkContent = "#2B2D42";
 export const darkThemeText = "#EDF2F4";
+export const darkThemeSecondaryText = "#ffffffb3";

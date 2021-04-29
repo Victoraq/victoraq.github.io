@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Timeline from "@material-ui/lab/Timeline";
 import Typography from "@material-ui/core/Typography";
@@ -11,18 +10,26 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import { Content } from "../../UI";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: "6px 16px",
-    marginBottom: "25px",
-  },
-  secondaryTail: {
-    backgroundColor: theme.palette.secondary.main,
-  },
-  oppositeContent: {
-    flex: 0.2,
-  },
-}));
+const StyledPaper = styled(Paper)`
+  padding: 6px 16px;
+  margin-bottom: 25px;
+  && {
+    background-color: ${({ theme }) => theme.content};
+    color: ${({ theme }) => theme.text};
+  }
+`;
+
+const SecondaryTypography = styled(Typography)`
+  && {
+    color: ${({ theme }) => theme.secondaryText};
+  }
+`;
+
+const OppositeContent = styled(TimelineOppositeContent)`
+  && {
+    flex: 0.2;
+  }
+`;
 
 const Icon = styled.img`
   width: 70px;
@@ -34,7 +41,6 @@ const Icon = styled.img`
 `;
 
 const Experience = ({ experience }) => {
-  const classes = useStyles();
 
   return (
     <Content>
@@ -42,17 +48,17 @@ const Experience = ({ experience }) => {
         {experience.map((experience) => {
           return (
             <TimelineItem>
-              <TimelineOppositeContent className={classes.oppositeContent}>
-                <Typography variant="body2" color="textSecondary">
+              <OppositeContent>
+                <SecondaryTypography variant="body2">
                   {experience.date}
-                </Typography>
-              </TimelineOppositeContent>
+                </SecondaryTypography>
+              </OppositeContent>
               <TimelineSeparator>
                 <Icon src={experience.image} />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
+                <StyledPaper elevation={3}>
                   <Typography variant="h6" component="h1">
                     {experience.title}
                   </Typography>
@@ -65,7 +71,7 @@ const Experience = ({ experience }) => {
                       );
                     })}
                   </ul>
-                </Paper>
+                </StyledPaper>
               </TimelineContent>
             </TimelineItem>
           );
