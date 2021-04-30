@@ -41,7 +41,6 @@ const Icon = styled.img`
 `;
 
 const Experience = ({ experience }) => {
-
   return (
     <Content>
       <Timeline align="left">
