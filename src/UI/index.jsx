@@ -10,7 +10,7 @@ export const Content = styled.div`
 
     @media (max-width: 800px) {
       margin: 0 5%;
-    height: 100%;
+      height: 100%;
     }
 `
 export const Paragraph = styled.p`
